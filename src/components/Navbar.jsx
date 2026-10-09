@@ -35,8 +35,8 @@ export const Navbar = ({ onAuthClick, user }) => {
               : 'bg-black/20 border border-white/5 backdrop-blur-sm'
             }`}
         >
-          <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase italic tracking-tighter text-white flex items-center gap-3 group hover:text-[#03c04a] transition-colors">
-            <div className="w-8 h-8 bg-gradient-to-tr from-[#029e3c] to-[#03c04a] skew-x-[-12deg] shadow-[0_0_15px_rgba(3,192,74,0.5)] group-hover:shadow-[0_0_25px_rgba(3,192,74,0.8)] transition-all"></div>
+          <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-black uppercase italic tracking-tighter text-white flex items-center gap-3 group hover:text-[#10b981] transition-colors">
+            <div className="w-8 h-8 bg-gradient-to-tr from-[#059669] to-[#10b981] skew-x-[-12deg] shadow-[0_0_15px_rgba(16,185,129,0.5)] group-hover:shadow-[0_0_25px_rgba(16,185,129,0.8)] transition-all"></div>
             <span className="hidden sm:inline">Respire</span>
           </Link>
 
@@ -48,13 +48,13 @@ export const Navbar = ({ onAuthClick, user }) => {
                 <Link 
                   key={link.name} 
                   to={link.path}
-                  className={`text-xs font-black uppercase tracking-[0.2em] transition-colors relative py-2 ${isActive ? 'text-[#03c04a]' : 'text-zinc-300 hover:text-white'}`}
+                  className={`text-xs font-black uppercase tracking-[0.2em] transition-colors relative py-2 ${isActive ? 'text-[#10b981]' : 'text-zinc-300 hover:text-white'}`}
                 >
                   {link.name}
                   {isActive && (
                       <motion.div 
                         layoutId="activeNavIndicator"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#03c04a] shadow-[0_0_10px_rgba(3,192,74,0.6)]"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#10b981] shadow-[0_0_10px_rgba(16,185,129,0.6)]"
                       />
                   )}
                 </Link>
@@ -65,16 +65,16 @@ export const Navbar = ({ onAuthClick, user }) => {
           {/* Profile / Login */}
           <div className="hidden lg:flex items-center gap-4">
             {user ? (
-              <div className="flex items-center gap-4 bg-black/40 pl-4 pr-1 py-1 rounded-full border border-white/10 group hover:border-[#03c04a] transition-colors cursor-pointer" onClick={() => window.location.href = '/dashboard'}>
+              <Link to="/dashboard" className="flex items-center gap-4 bg-black/40 pl-4 pr-1 py-1 rounded-full border border-white/10 group hover:border-[#10b981] transition-colors cursor-pointer">
                   <span className="text-[10px] font-black text-white uppercase tracking-widest">{user.name.split(' ')[0]}</span>
-                  <div className="w-8 h-8 rounded-full overflow-hidden border border-[#03c04a]">
+                  <div className="w-8 h-8 rounded-full overflow-hidden border border-[#10b981]">
                       <img src={user.avatar} alt="User" className="w-full h-full object-cover" />
                   </div>
-              </div>
+              </Link>
             ) : (
               <button 
                   onClick={onAuthClick} 
-                  className="text-[10px] font-black bg-[#03c04a] text-black px-6 py-3 rounded-full shadow-[0_0_15px_rgba(3,192,74,0.3)] uppercase tracking-widest hover:bg-white transition-all transform hover:scale-105"
+                  className="text-[10px] font-black bg-[#10b981] text-black px-6 py-3 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.3)] uppercase tracking-widest hover:bg-white transition-all transform hover:scale-105"
               >
                   Member Login
               </button>
@@ -100,7 +100,7 @@ export const Navbar = ({ onAuthClick, user }) => {
           >
             <div className="flex justify-between items-center mb-16 border-b border-white/5 pb-8">
                <Link to="/" onClick={() => setIsOpen(false)} className="text-3xl font-black uppercase italic tracking-tighter text-white flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#03c04a] skew-x-[-12deg] shadow-[0_0_15px_rgba(3,192,74,0.5)]"></div>
+                  <div className="w-10 h-10 bg-[#10b981] skew-x-[-12deg] shadow-[0_0_15px_rgba(16,185,129,0.5)]"></div>
                   Respire
                </Link>
                <button onClick={() => setIsOpen(false)} className="text-zinc-500 hover:text-white p-2 rounded-full bg-white/5">
@@ -116,7 +116,7 @@ export const Navbar = ({ onAuthClick, user }) => {
                  transition={{ delay: 0.1 * idx }}
                  key={link.name}
                 >
-                    <Link to={link.path} onClick={() => setIsOpen(false)} className="text-4xl font-black text-zinc-300 hover:text-[#03c04a] uppercase italic transition-colors">
+                    <Link to={link.path} onClick={() => setIsOpen(false)} className="text-4xl font-black text-zinc-300 hover:text-[#10b981] uppercase italic transition-colors">
                     {link.name}
                     </Link>
                 </motion.div>
@@ -126,7 +126,7 @@ export const Navbar = ({ onAuthClick, user }) => {
             <div className="mt-auto pt-8 border-t border-white/10">
                {user ? (
                 <Link to="/dashboard" onClick={() => setIsOpen(false)} className="flex items-center gap-4 bg-black/40 p-4 rounded-2xl border border-white/10 w-full group">
-                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#03c04a]">
+                    <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#10b981]">
                         <img src={user.avatar} alt="User" className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                     </div>
                     <div>

@@ -6,18 +6,8 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        oswald: ['Oswald', 'sans-serif'],
-      },
       colors: {
-        brand: '#03c04a', // Electric Green
-        'brand-dark': '#029e3c',
-        zinc: {
-          950: '#09090b',
-          900: '#18181b',
-          800: '#27272a',
-        }
+        brand: '#03c04a', // Bright Green
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',

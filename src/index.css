@@ -4,89 +4,60 @@
 
 @layer base {
   :root {
-    --brand: #03c04a;
-    --brand-dark: #029e3c;
+    --brand: #10b981; /* Modern Emerald */
+    --brand-dark: #059669;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    background-color: #09090b;
-    background-image: 
-      linear-gradient(rgba(9, 9, 11, 0.9), rgba(9, 9, 11, 0.9)),
-      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
+    background-color: #0a0a0a;
+    background-image:
+      linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.95)),
+      url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=2000&q=80");
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
-    color: #ffffff;
+    background-repeat: no-repeat;
+    color: #f3f4f6; /* zinc-100 */
     min-height: 100vh;
+    font-family: 'Inter', system-ui, sans-serif;
   }
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes reveal-up {
-  0% { transform: translateY(30px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-.animate-reveal {
-  animation: reveal-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-@keyframes heart-pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.4); }
-  100% { transform: scale(1); }
-}
-
-.animate-pop {
-  animation: heart-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.5); 
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1); 
-  border-radius: 0px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: var(--brand); 
+  background: rgba(0, 0, 0, 0.2);
 }
 
-/* Gritty Industrial Utilities */
-.glass-panel {
-  background: #18181b;
-  border: 1px solid #27272a;
-  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1);
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+/* Clean Panel Utilities */
+.clean-panel {
+  background: #171717; /* neutral-900 */
+  border: 1px solid #262626; /* neutral-800 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.clean-card {
+  background: #171717;
+  border: 1px solid #262626;
   transition: all 0.2s ease-in-out;
 }
 
-.glass-panel:hover {
-  box-shadow: 12px 12px 0px 0px rgba(3, 192, 74, 0.2);
-  border-color: #03c04a;
-}
-
-.glass-card {
-  background: #09090b;
-  border: 1px solid #27272a;
-  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+.clean-card:hover {
+  border-color: #404040;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
